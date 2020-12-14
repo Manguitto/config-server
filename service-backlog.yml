@@ -1,0 +1,23 @@
+server:
+  port: 9080
+spring:
+  application:
+    name: service-backlog
+  h2:
+    console:
+      enabled: true
+    datasource:
+      url: jdbc:h2:mem:360afc4e-8568-42f2-b8d8-7047225cbf94;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      driver-class-name: org.h2.Driver
+      plataform: h2
+      username: sa
+      password:
+    Jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      database-plataform: org.hibernate.dialect.H2Dialect
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTER:-%5P} %m%n"
